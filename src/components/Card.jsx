@@ -27,9 +27,10 @@ export const PlayerCard = ({ players }) => {
 const useStyles = makeStyles((theme) => ({
   teamCard: {
     width: '200px',
-    height: '250px',
+    height: '350px',
    
-    marginLeft:"15px",
+    marginLeft: "15px",
+    marginTop: "60px",
     border: "solid 1px none none none",
    
     textAlign: 'center'
@@ -38,12 +39,12 @@ const useStyles = makeStyles((theme) => ({
 
   teamImage: {
     width: '200px',
-    height: '150px',
+    height: '200px',
    
   },
 
   textCard: {
-    color: '#000000',
+    color: '#fff',
     fontWeight:'bold'
   },
 
@@ -61,7 +62,7 @@ export const TeamCard = ({ number, position }) => {
   const classes = useStyles();
   return (
     <div className={classes.teamCard}>
-      <img className={classes.teamImage} src={Moh} />
+      <img className={classes.teamImage} src={Moh} alt="player" />
       <div className={classes.textBox}>
         <p className={classes.textCard}> Number: {number}</p>
       <p className={classes.textCard}> Position: {position}</p> 

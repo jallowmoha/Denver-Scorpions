@@ -8,7 +8,7 @@
 
 
 .main-navbar {
-    background-color:#16c79a;
+    background-color:#272343;
     position: -webkit-sticky;
     
     top: 0;
@@ -84,7 +84,7 @@
 .break {
     
     background-color: #fff;
-    margin: 60px 10%;
+    margin: 60px 10% ;
    
     display: flex;
     justify-content: center;
@@ -96,17 +96,21 @@
 
 .break-pastgames {
 
+    background-color: #fff;
+    margin: 60px 15%;
+   
+}
+.break-team {
+
     background-color: #272343;
-    margin: 60px 300px;
-    height: 300px;
-
-    display: flex;
-    justify-content: center;
+    margin: 60px 0px;
+    height: 750px;
+    width: 100%;
+    display:flex;
     align-items: center;
-
+   
 
 }
-
 .fixtures {
     
     display:flex;
@@ -136,12 +140,13 @@
 }
 .team-logo {
    padding-top: 80px;
+   padding-right: 40px
     
 }
 
 .schedule {
     background-color: #272343;
-    width: 380px;
+    width: 50%px;
     height: 200px;
     display: flex;
     justify-content: space-between;
@@ -152,7 +157,7 @@
 }
 .schedule-pastgames {
     background-color: #16c79a;
-    width: 380px;
+    width: 80px;
     height: 200px;
     display: flex;
     justify-content: space-between;
@@ -302,18 +307,25 @@ ul {
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid grey;
     border-collapse: collapse;
+    border-left: none;
+    border-right: none;
+}
+table {
+    width: 100%; 
+    table-layout: fixed;
+    align-items: center;
 }
 
-th,td {
-    padding: 10px;
-    text-align: center;
 
-}
 
 th {
     background-color: #e84545;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+   
 }
 
 .footer {
@@ -339,3 +351,38 @@ th {
 .rec-arrow[disabled] {
     transform: scale(0);
 }
+
+.news-container {
+    width: 350px;
+    height: 350px;
+    background-color: #fff;
+    border: 1px solid grey;
+   
+}
+
+.news-img {
+    width: 250px;
+    height: 350px;
+    margin-left: 50px;
+}
+
+.news-date {
+    color: red;
+    margin: 40px 10px 10px 50px;
+    font-weight: bold;
+   
+
+}
+
+.news-date:hover {color: black;}
+
+.news-headline {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    margin-left: 50px;
+    border: none;
+    background-color: inherit;
+}
+
+.news-headline:hover {color: red;}

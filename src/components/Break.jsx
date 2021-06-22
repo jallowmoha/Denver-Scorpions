@@ -23,3 +23,14 @@ export const BreakPastGames = ({children}) => {
         
     )
 }
+export const BreakTeam = ({children}) => {
+    return (
+      
+            <div className='break-team' >
+        {children}
+            
+        </div>
+
+        
+    )
+}

@@ -18,19 +18,20 @@ import { Header } from './components/Header'
 import { SocialMediaIcons } from './components/SocialMediaIcons'
 import { BrandBadge } from './components/Badge'
 import { PageCalendar } from './components/Calendar'
-import { Break, BreakPastGames } from './components/Break'
+import { Break, BreakPastGames, BreakTeam } from './components/Break'
 import { Fixtures } from './components/Fixtures'
 import {Footer} from './components/Footer'
 import { Games } from './components/Games'
 import { Schedule } from './components/Schedule'
 import {LeagueTable} from './components/LeagueTable'
 import MainStadium from './images/mainstadium.jpg'
-import {PastGames} from './components/PastGames'
+import { PastGames } from './components/PastGames'
+import {News} from './components/News'
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#fffff',
+   
     backgroundImage: `url()`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -58,7 +59,7 @@ const breakPoints = [
   },
   
   {
-    width: 550, itemsToShow: 2, itemsToScroll: 2
+    width: 550, itemsToShow: 1, itemsToScroll: 2
   },
   
   {
@@ -154,22 +155,37 @@ function App() {
      
       
     
-         <Break>
-        <Carousel breakPoints={breakPoints} enableSwipe='true'>
-          <LeagueTable />
-          <PageCalendar  />
-          <PastGames  />
+      <BreakPastGames>
+        <Row>
+          <Col >
+            <LeagueTable />
+          </Col>
+          
          
          
-        </Carousel>
+        
+     
+          
 
-      </Break>
 
+       
+         
+          
+
+        </Row>
+       
+          
+         
+         
+      
+
+      </BreakPastGames>
+     
       
       
       <BreakPastGames />
 
-      <Break>
+      <BreakTeam>
         <Carousel breakPoints={secondBreakPoints}>
            <TeamCard
         number="15"
@@ -210,10 +226,22 @@ function App() {
         </Carousel>
 
 
+      </BreakTeam>
+
+      <Break>
+        <News />
+         <News/>
+
+
       </Break>
+     
       
      
-     
+     {/*<Col  >
+            <PageCalendar  /> 
+
+          </Col> */}
+
 
      
 

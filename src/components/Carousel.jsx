@@ -2,7 +2,6 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import PreGame from '../images/pregame.JPG'
 import GameDay from '../images/gameday.JPG';
-import Shybu from '../images/syhbu.JPG'
 import Squad from '../images/squad.jpg'
 export const MainCarousel = ({firstLabel, firstTitle, secondLabel, secondTitle, thirdLabel, thirdTitle}) => {
     return (

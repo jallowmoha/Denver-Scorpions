@@ -11,14 +11,19 @@
     background-color:#272343;
     position: -webkit-sticky;
     
-    top: 0;
-    height: 80px;
     
-}
+   
+    
+} 
 .text-navbar {
     color:#fff;
     font-size: 1rem
     
+}
+
+.brand-text {
+    font-family: italic;
+    padding-left: 1rem;
 }
 
 #basic-nav-dropdown {
@@ -83,33 +88,94 @@
 
 .break {
     
-    background-color: #fff;
-    margin: 60px 10% ;
+    background-color: #F4F4F4;
+    margin-top: 10px;
+    
    
-    display: flex;
-    justify-content: center;
-    align-items: center;
    
    
     
 }
 
+
+
 .break-pastgames {
 
     background-color: #fff;
-    margin: 60px 15%;
+    width: 100%;
+    
    
+   
+}
+.league-table {
+ align-items: center;
+ display: flex;
+ justify-content: center;
+ margin: 60px 5%;
+}
+
+.league-text {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    color: #000000;
+    padding-top: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 .break-team {
 
-    background-color: #272343;
-    margin: 60px 0px;
-    height: 750px;
+    background-color: #0A1931;
+    
+   
     width: 100%;
-    display:flex;
-    align-items: center;
+    height: 700px;
+   
    
 
+}
+.first-team {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    padding-top: 40px;
+    font-family: Arial,
+    Helvetica,
+    sans-serif;
+    
+}
+.button-container {
+    
+    display: flex;
+    justify-content: center;
+}
+
+.table-button {
+    background-color: #e84545;
+    
+    color: #fff;
+    text-align: center;
+    height: 3.5rem;
+    width: 8%;
+    border-radius: 50px;
+    border: 1px solid #e84545;
+    margin-bottom: 100px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7rem;
+
+}
+@media only screen and (max-width: 1500px) {
+    .table-button {
+          height: 7vh;
+          width:30vw;
+    }
+}
+
+.table-button:hover {
+    background-color: #272343;
+    border: 1px solid #272343;
 }
 .fixtures {
     
@@ -139,18 +205,43 @@
 
 }
 .team-logo {
-   padding-top: 80px;
-   padding-right: 40px
+   padding-top: 10vh;
+   padding-left: 0px !important;
     
+  
+
+   
+    
+}
+.container {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+
+
+.margin-row {
+    margin: 0px !important;
+}
+
+.home-team {
+    padding: 0px !important;
+    position: relative;
+}
+
+.away-team {
+    padding-right: 20px;
 }
 
 .schedule {
     background-color: #272343;
-    width: 50%px;
-    height: 200px;
+    justify-content: center;
     display: flex;
-    justify-content: space-between;
-     margin: 0px 20px 15px;
+   
+  
+  
+   
+     margin: 0px 0px 15px;
    
     border-radius: 25px;
     
@@ -171,27 +262,40 @@
 
 
 .location {
-    padding-left: 50px;
+    
     color: #fff;
-    font-size:15px !important;
-    padding-top: 5px;
+    font-size:0.8rem;
+    padding-top: ;
     font-family: Arial,
     Helvetica,
     sans-serif;
-    font-weight: bold;
+    
+    text-align: center;
+   
 }
-
+@media only screen and (max-width:800px) {
+    .location {
+        font-size: 0.5rem;
+    }
+}
 
 .vs-text {
     color: #fff;
-    font-size:10px !important;
-     padding-top: 25px;
+    font-size:0.5rem;
+     padding-top: ;
      font-family: Arial,
      Helvetica,
      sans-serif;
    display: flex;
    justify-content: center;
-    padding-left: 15px ;
+  
+   
+}
+
+@media only screen and (max-width:800px) {
+    .vs-text {
+        font-size: 0.3rem;
+    }
 }
 
 .game-time {
@@ -204,7 +308,8 @@
 
 .logo-img {
   
-    height: 50px;
+    height: 5vh;
+    width: 4vw;
 }
 
 .games-container {
@@ -253,8 +358,9 @@
     sans-serif;
     font-style: italic;
     font-size: 30px;
-    display: flex;
-    justify-content: center;
+   
+   
+    text-align: center;
 
 
 }
@@ -265,25 +371,32 @@ ul {
 
 .date-schedule {
     color: #fff;
-    font-size:15px !important;
+    font-size:0.8rem;
     padding-top: 5px;
     font-family: Arial,
     Helvetica,
     sans-serif;
     font-weight: bold;
-    padding-left: 35px;
+    
+    align-items: center;
     
 }
-.team-style {
-    padding-right:
+@media only screen and (max-width: 800px) {
+    .date-schedule {
+        word-wrap: break-word;
+        font-size: 0.5rem;
+    }
 }
 
+
 .team-name {
-    padding-top: 20px;
+    padding-top: ;
      color: #fff;
      font-family: Arial,
      Helvetica,
      sans-serif;
+     font-size: 0.4rem;
+     text-align: center;
 
 }
 
@@ -318,12 +431,22 @@ table {
     align-items: center;
 }
 
+td {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #797e87 !important;
+}
 
+  @media only screen and (max-width: 800px) {
+      td {
+          font-size: 0.4rem;
+      }
+  }
 
 th {
     background-color: #e84545;
     height: 60px;
-    font-size: 20px;
+    font-size: 0.8rem;
     font-weight: bold;
    
 }
@@ -352,24 +475,53 @@ th {
     transform: scale(0);
 }
 
+.news-card {
+  
+    margin: auto;
+    padding: 20px 10% 0px
+}
+@media only screen and (max-width: 800px) {
+    .news-card {
+        padding-left: 75px;
+    }
+}
+
+.latest-news {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: a;
+}
+
 .news-container {
-    width: 350px;
-    height: 350px;
+    width: 10vw;
+    height: 30vh;
     background-color: #fff;
-    border: 1px solid grey;
+    
    
+}
+@media only screen and (max-width: 600px) {
+    .news-container {
+        width: 30vw;
+    }
 }
 
 .news-img {
-    width: 250px;
-    height: 350px;
-    margin-left: 50px;
+    width: 15vw;
+    height: 30vh;
+   
+}
+@media only screen and (max-width: 800px) {
+    .news-img {
+        width: 30vw;
+    }
 }
 
 .news-date {
     color: red;
-    margin: 40px 10px 10px 50px;
+    margin: 40px 10px 10px 20px;
     font-weight: bold;
+    font-size: 0.7rem;
    
 
 }
@@ -377,12 +529,59 @@ th {
 .news-date:hover {color: black;}
 
 .news-headline {
-    font-size: 20px;
+    font-size: 0.8rem;
     font-weight: bold;
     color: #000000;
-    margin-left: 50px;
     border: none;
     background-color: inherit;
+    word-wrap: break-word;
 }
 
 .news-headline:hover {color: red;}
+
+input[type=text],
+input[type=email],
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+}
+.form-header {
+    text-align: center;
+    font-weight: bold;
+    font-family: a;
+    font-size: 2.5rem;
+}
+form {
+    
+    
+    padding: 1.5rem 30%
+}
+ .form-label {
+     padding-top: 1.5rem;
+ }
+
+ .form-button {
+     width: 100px;
+     height: 40px;
+      background-color: green;
+      color: #fff;
+      
+ }
+.gallery {
+    width: 15vw;
+    height: 35vh;
+    padding: 2rem 0.5rem;
+}
+@media only screen and (max-width: 800px) {
+    .gallery {
+        width: 90px;
+        height: 200px;
+        padding: 0.5rem 0.1rem;
+    }
+}
+
+.gallery-container {
+    margin: 1rem 0rem;
+    
+}

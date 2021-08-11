@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 
 import { PlayerCard } from './Card';
-import { Games } from './Games'
-import {Fixtures} from './Fixtures'
-import { GamesOutlined } from '@material-ui/icons';
+
 
 export const Api = () => {
     const [players, setPlayers] = useState([])
 
     const getPlayer = async () => {
-        const url = "http://127.0.0.1:8000/player/"
+        const url = "https://deverscorpions.herokuapp.com/player"
 
         const response = await fetch(url);
         const responseJson = await response.json();
@@ -39,7 +37,7 @@ export const Api = () => {
 
 
 const api = axios.create({
-    baseURL: 'http://127.0.0.1:8000/'
+    baseURL: 'https://deverscorpions.herokuapp.com'
 });
 
 export const getGames = () => api.get('/game').then(res => res.data)

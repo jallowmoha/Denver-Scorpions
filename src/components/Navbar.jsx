@@ -1,34 +1,51 @@
 import React from 'react'
-import { Navbar, Nav, NavDropdown, FormGroup, Form, Button, FormControl } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { Home } from './Home'
+import { LeagueTable } from './LeagueTable'
+import { TeamCard } from './Card'
+import { Contact } from './Contact'
+import { Gallery } from './Gallery'
+
 
 
 export const MainNavbar = ({brand, title1, title2,title3, dropdown, action1, action2, action3, contact, gallery}) => {
-    return (
+  return (
+      <Router>
+      
+    
         <div className="main-navbar" >
            <Navbar className="main-navbar" collapseOnSelect expand="lg"  variant="dark">
-  <Navbar.Brand href="#home">{brand}</Navbar.Brand>
+  <Navbar.Brand as={Link} to="/">DENVER SCORPIONS</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="#features">{title1}</Nav.Link>
-      <Nav.Link href="#pricing">{title2}</Nav.Link>
-      <Nav.Link href="#pricing">{title3}</Nav.Link>
-      <NavDropdown title={dropdown} id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">{action1}</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">{action2}</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">{action3}</NavDropdown.Item>
-      
-        
-      </NavDropdown>
+      <Nav.Link as={Link} to="/about">ABOUT</Nav.Link>
+      <Nav.Link as={Link} to="/fixtures">FIXTURES</Nav.Link>
+      <Nav.Link as={Link} to="/table">TABLE</Nav.Link>
+      <Nav.Link as={Link} to="/players">TEAM</Nav.Link>
     </Nav>
     <Nav>
-                        <Nav.Link href="#deets">{contact}</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-        {gallery}
+    <Nav.Link as={Link} to="/contact">CONTACT</Nav.Link>
+      <Nav.Link as={Link} to="/gallery">
+        GALLERY
       </Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
-        </div>
+      </div>
+       <Switch>
+          <Route path='/' exact component={Home}/>
+          <Route path='/table' exact component={LeagueTable} />
+          <Route path='/players' exact component={TeamCard} />
+          <Route path='/contact' exact component={Contact} />
+           <Route path='/gallery' exact component={Gallery}/>
+        </Switch>
+        </Router>
     )
 }

@@ -3,30 +3,29 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
+import { Navbar, Nav, } from 'react-bootstrap';
+
+
 import Col from 'react-bootstrap/Col'
-import Carousel from 'react-elastic-carousel';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
-import { MainNavbar } from './components/Navbar'
-import { MainCarousel } from './components/Carousel'
-import Background from './images/gameday.JPG'
-import { Api } from './components/Api';
-import { PlayerCard, TeamCard } from './components/Card'
-import { Header } from './components/Header'
+
+
+import {Home} from './components/Home'
 import { SocialMediaIcons } from './components/SocialMediaIcons'
-import { BrandBadge } from './components/Badge'
-import { PageCalendar } from './components/Calendar'
-import { Break, BreakPastGames, BreakTeam } from './components/Break'
-import { Fixtures } from './components/Fixtures'
 import {Footer} from './components/Footer'
-import { Games } from './components/Games'
-import { Schedule } from './components/Schedule'
-import {LeagueTable} from './components/LeagueTable'
+import { LeagueTable } from './components/LeagueTable'
+import {TeamCard } from './components/Card'
 import MainStadium from './images/mainstadium.jpg'
-import { PastGames } from './components/PastGames'
-import {News} from './components/News'
+import { Contact } from './components/Contact'
+import { Gallery } from './components/Gallery'
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url()`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    backgroundColor: '#fff'
+    backgroundColor: '#F4F4F4'
   },
   firstImage: {
     width: '100%',
@@ -48,239 +47,77 @@ const useStyles = makeStyles((theme) => ({
 
   break: {
     backgroundColor: '#272343',
+
   }
+}))
 
-  
-}));
-
-const breakPoints = [
-  {
-    width: 1, itemsToShow: 1
-  },
-  
-  {
-    width: 550, itemsToShow: 1, itemsToScroll: 2
-  },
-  
-  {
-    width: 768, itemsToShow: 3
-  },
-  
-  {
-    width: 1200, itemsToShow: 3
-  },
-]
-
-const secondBreakPoints = [
-  {
-    width: 1, itemsToShow: 1
-  },
-  
-  {
-    width: 550, itemsToShow: 3, itemsToScroll: 3
-  },
-  
-  {
-    width: 768, itemsToShow: 5
-  },
-  
-  {
-    width: 1200, itemsToShow: 7
-  },
-]
 
 function App() {
   const classes = useStyles();
   return (
+   
+    <Router>
+       
     <div className={classes.root}>
-    <CssBaseline/>
       
-      <Row className='row'>
-        
-        
-        <Col xs={12} md={12}>
-         <MainNavbar
-        brand="DENVER SCORPIONS"
-        title1="ABOUT"
-        title2="FIXTURES"
-        title3="TABLE"
-        dropdown="TEAM"
-        action1="STAFF"
-        action2="PLAYERS"
-        action3="ACADEMY"
-        contact="CONTACT"
-        gallery="GALLERY"  
-      />
-         
-        </Col>
-        
-        
+    <CssBaseline/>
+        <div className="main-navbar sticky-top pt-3 pb-3" >
+           <Navbar className="main-navbar" collapseOnSelect expand="lg"  variant="dark" sticky="top">
+  <Navbar.Brand className="brand-text" as={Link} to="/">DENVER SCORPIONS</Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="mr-auto">
+      <Nav.Link as={Link} to="/about">ABOUT</Nav.Link>
+      <Nav.Link as={Link} to="/fixtures">FIXTURES</Nav.Link>
+      <Nav.Link as={Link} to="/table">TABLE</Nav.Link>
+      <Nav.Link as={Link} to="/players">TEAM</Nav.Link>
+    </Nav>
+    <Nav>
+    <Nav.Link as={Link} to="/contact">CONTACT</Nav.Link>
+      <Nav.Link as={Link} to="/gallery">
+        GALLERY
+      </Nav.Link>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
+      </div>
      
-        
-      </Row>
 
       <Col xs={12} md={12}>
         
         <img className={classes.firstImage}
-          src={MainStadium}
+          src={MainStadium} alt=""
         />
 
-      </Col>
+        </Col>
+   
+   
+        
       
      {/* <Break>
          <Fixtures/>
       
       </Break>  */}
-      
-
-      
-        <Break>
-        <Carousel breakPoints={breakPoints}>
-        <Schedule />
-          <Schedule />
-          <Schedule />
-          <Schedule />
-          <Schedule />
-          <Schedule />
-        </Carousel>
-
-
-        
-          
-         
-
-        
-        </Break>
-
-     
-      
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/table' exact component={LeagueTable} />
+          <Route path='/players' exact component={TeamCard} />
+          <Route path='/contact' exact component={Contact} />
+           <Route path='/gallery' exact component={Gallery}/>
+        </Switch>
     
-      <BreakPastGames>
-        <Row>
-          <Col >
-            <LeagueTable />
-          </Col>
-          
-         
-         
-        
      
-          
-
-
-       
-         
-          
-
-        </Row>
-       
-          
-         
-         
-      
-
-      </BreakPastGames>
-     
-      
-      
-      <BreakPastGames />
-
-      <BreakTeam>
-        <Carousel breakPoints={secondBreakPoints}>
-           <TeamCard
-        number="15"
-        position="midfield"
-      />
-       <TeamCard
-        number="15"
-        position="midfield"
-          />
-           <TeamCard
-        number="15"
-        position="midfield"
-          />
-           <TeamCard
-        number="15"
-        position="midfield"
-          />
-           <TeamCard
-        number="15"
-        position="midfield"
-          />
-           <TeamCard
-        number="15"
-        position="midfield"
-          />
-           <TeamCard
-        number="15"
-        position="midfield"
-          />
-           <TeamCard
-        number="15"
-        position="midfield"
-          />
-           <TeamCard
-        number="15"
-        position="midfield"
-      />
-        </Carousel>
-
-
-      </BreakTeam>
-
-      <Break>
-        <News />
-         <News/>
-
-
-      </Break>
-     
-      
-     
-     {/*<Col  >
-            <PageCalendar  /> 
-
-          </Col> */}
-
-
-     
-
-       
-
-      <Col xs={6} md={2}>
-     
-          
-
-
-        </Col>
-      <Col xs={6} md={2}>
-         
-        </Col>
-     
-      <br />
-      
-      {/*  <Row>
-        <Col md={{ span: 6, offset: 3}} >
-          <MainCarousel/>
-          
-        </Col> 
-        
-        
-
-      </Row> */}
-     
-      
-      
-     
-      
       
 
       <Footer>
          <SocialMediaIcons/> 
 
       </Footer>
-      
+        
     </div>
+       </Router>
+      
+    
   );
 }
 

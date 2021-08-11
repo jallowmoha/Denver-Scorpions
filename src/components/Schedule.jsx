@@ -1,6 +1,5 @@
 import React from 'react'
 import  Scorpion  from '../images/teamlogo/scorpions.png'
-import { Chin } from '../images/teamlogo/chin.png'
 import Wow from '../images/teamlogo/wow.png'
 
 export const Schedule = () => {
@@ -8,26 +7,26 @@ export const Schedule = () => {
 
         
 
-        <div className='schedule'>
+        <div className='schedule ms-0 ps-0'>
            
            
-            <div className='row '>
-                <div>
+            <div className='row ms-0'>
+                <div className="home-team ">
                     <TeamLogo
                         team={Scorpion}
                         teamName="Scorpions"
                    />
 
                 </div>
-                 <div >
+                 <div className="" >
                     <p className=' location'>Lowry Park</p>
-                    <p className='date-schedule'> June 24th @6pm</p>
+                    <p className='date-schedule'>June 24th @6pm </p>
                     <p className='vs-text'> VS </p>
 
                 </div>
                
                 
-                <div className='team-style'>
+                <div className='away-team'>
 
                   <TeamLogo
                         team={Wow}
@@ -50,7 +49,7 @@ export const TeamLogo = ({team, teamName}) => {
         <div className='team-logo'>
             <ul >
                 <li>
-                     <img className='logo-img' src={team} />
+                     <img className='logo-img' src={team} alt={teamName} />
                     
                     
 
@@ -66,11 +65,3 @@ export const TeamLogo = ({team, teamName}) => {
     )
 }
 
-export const GameTime = () => {
-    return (
-        <div className='game-time'>
-            <p className="schedule-text"> Lowry Park @ June 25th, 5pm </p>
-            <p className="schedule-text"> vs </p>
-        </div>
-    )
-}

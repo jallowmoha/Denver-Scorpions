@@ -3,6 +3,7 @@ import { Card } from 'react-bootstrap'
 import { makeStyles } from '@material-ui/core/styles';
 import Moh from '../images/Players/Moh.png'
 
+
 export const PlayerCard = ({ players }) => {
     
 
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   teamCard: {
     width: '200px',
     height: '350px',
-   
+  
     marginLeft: "15px",
     marginTop: "60px",
     border: "solid 1px none none none",
@@ -51,17 +52,24 @@ const useStyles = makeStyles((theme) => ({
   textBox: {
     border: 'solid 1px',
     paddingTop: '10px',
-    backgroundColor: '',
+   backgroundColor: '#272343',
    
     
   }
   
 }))
 
-export const TeamCard = ({ number, position }) => {
+export const TeamCard = ({ number, position, header }) => {
   const classes = useStyles();
   return (
-    <div className={classes.teamCard}>
+   
+
+    
+    
+      
+   
+     
+      <div className={classes.teamCard}>
       <img className={classes.teamImage} src={Moh} alt="player" />
       <div className={classes.textBox}>
         <p className={classes.textCard}> Number: {number}</p>
@@ -71,6 +79,8 @@ export const TeamCard = ({ number, position }) => {
       
 
 
-    </div>
+      </div>
+     
+     
   )
 }

@@ -15,8 +15,15 @@ export const Break = ({children}) => {
 export const BreakPastGames = ({children}) => {
     return (
       
-            <div className='break-pastgames' >
-        {children}
+        <div className='break-pastgames' >
+            
+            
+            <div >
+              {children}
+            </div>
+
+           
+      
             
         </div>
 
@@ -26,8 +33,13 @@ export const BreakPastGames = ({children}) => {
 export const BreakTeam = ({children}) => {
     return (
       
-            <div className='break-team' >
-        {children}
+        <div className='break-team' >
+           <p className='first-team'> THE FIRST TEAM </p>
+            <div>
+                  {children}
+
+            </div>
+      
             
         </div>
 

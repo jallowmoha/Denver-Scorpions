@@ -1,9 +1,11 @@
 import React from 'react'
+import Shybu from '../images/syhbu.JPG'
 
-export const Gallery = ({source}) => {
+export const Gallery = () => {
     return (
-        <div>
-            <img src={source}/>
+        <div className="gallery-container">
+            <img className="gallery" src={Shybu} alt="" />
+            
         </div>
     )
 }
